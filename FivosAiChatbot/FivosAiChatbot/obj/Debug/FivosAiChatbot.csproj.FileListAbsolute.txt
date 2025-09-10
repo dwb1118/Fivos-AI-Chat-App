@@ -1,9 +1,0 @@
-C:\Users\P\source\repos\FivosAiChatbot\FivosAiChatbot\obj\Debug\FivosAiChatbot.csproj.AssemblyReference.cache
-C:\Users\P\source\repos\FivosAiChatbot\FivosAiChatbot\obj\Debug\FivosAiChatbot.Properties.Resources.resources
-C:\Users\P\source\repos\FivosAiChatbot\FivosAiChatbot\obj\Debug\FivosAiChatbot.csproj.GenerateResource.cache
-C:\Users\P\source\repos\FivosAiChatbot\FivosAiChatbot\obj\Debug\FivosAiChatbot.csproj.CoreCompileInputs.cache
-C:\Users\P\source\repos\FivosAiChatbot\FivosAiChatbot\bin\Debug\FivosAiChatbot.exe.config
-C:\Users\P\source\repos\FivosAiChatbot\FivosAiChatbot\bin\Debug\FivosAiChatbot.exe
-C:\Users\P\source\repos\FivosAiChatbot\FivosAiChatbot\bin\Debug\FivosAiChatbot.pdb
-C:\Users\P\source\repos\FivosAiChatbot\FivosAiChatbot\obj\Debug\FivosAiChatbot.exe
-C:\Users\P\source\repos\FivosAiChatbot\FivosAiChatbot\obj\Debug\FivosAiChatbot.pdb
