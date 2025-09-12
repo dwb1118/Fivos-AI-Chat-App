@@ -8,6 +8,7 @@ How to run this code:<br>
 4. Tools > NuGet Package Manager > Manage NuGet Packages for solution > Install-Package Newtonsoft.Json<br>
 5. Replace the auto-generated code in Form1.cs with the code above.<br>
 6. Build and run the project.<br>
+<br>
 
 How it works:<br>
 1. The application creates a basic GUI with a chat display, an input box, and a send button.<br>
