@@ -1,0 +1,12 @@
+C:\Users\P\OneDrive\Documents\AiChatAppProject\TestGUI\TestGUI\bin\Debug\TestGUI.exe.config
+C:\Users\P\OneDrive\Documents\AiChatAppProject\TestGUI\TestGUI\bin\Debug\TestGUI.exe
+C:\Users\P\OneDrive\Documents\AiChatAppProject\TestGUI\TestGUI\bin\Debug\TestGUI.pdb
+C:\Users\P\OneDrive\Documents\AiChatAppProject\TestGUI\TestGUI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\P\OneDrive\Documents\AiChatAppProject\TestGUI\TestGUI\bin\Debug\Newtonsoft.Json.xml
+C:\Users\P\OneDrive\Documents\AiChatAppProject\TestGUI\TestGUI\obj\Debug\TestGUI.csproj.AssemblyReference.cache
+C:\Users\P\OneDrive\Documents\AiChatAppProject\TestGUI\TestGUI\obj\Debug\TestGUI.Properties.Resources.resources
+C:\Users\P\OneDrive\Documents\AiChatAppProject\TestGUI\TestGUI\obj\Debug\TestGUI.csproj.GenerateResource.cache
+C:\Users\P\OneDrive\Documents\AiChatAppProject\TestGUI\TestGUI\obj\Debug\TestGUI.csproj.CoreCompileInputs.cache
+C:\Users\P\OneDrive\Documents\AiChatAppProject\TestGUI\TestGUI\obj\Debug\TestGUI.csproj.Up2Date
+C:\Users\P\OneDrive\Documents\AiChatAppProject\TestGUI\TestGUI\obj\Debug\TestGUI.exe
+C:\Users\P\OneDrive\Documents\AiChatAppProject\TestGUI\TestGUI\obj\Debug\TestGUI.pdb
