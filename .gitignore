@@ -1,0 +1,8 @@
+# Ignore Visual Studio files
+.vs/
+*.vsidx
+*.user
+*.suo
+*.db
+*.db-shm
+*.db-wal
