@@ -11,3 +11,15 @@ C:\Users\P\OneDrive\Documents\AiChatAppProject\GUI\FivosChatbotGUI\obj\Debug\Fiv
 C:\Users\P\OneDrive\Documents\AiChatAppProject\GUI\FivosChatbotGUI\obj\Debug\FivosChatbotGUI.exe
 C:\Users\P\OneDrive\Documents\AiChatAppProject\GUI\FivosChatbotGUI\obj\Debug\FivosChatbotGUI.pdb
 C:\Users\P\OneDrive\Documents\AiChatAppProject\GUI\FivosChatbotGUI\obj\Debug\FivosChatbotGUI.exe.config
+C:\Users\nov03\Source\Repos\dwb1118\Fivos-AI-Chat-App\AiChatAppProject\GUI\FivosChatbotGUI\bin\Debug\FivosChatbotGUI.exe.config
+C:\Users\nov03\Source\Repos\dwb1118\Fivos-AI-Chat-App\AiChatAppProject\GUI\FivosChatbotGUI\bin\Debug\FivosChatbotGUI.exe
+C:\Users\nov03\Source\Repos\dwb1118\Fivos-AI-Chat-App\AiChatAppProject\GUI\FivosChatbotGUI\bin\Debug\FivosChatbotGUI.pdb
+C:\Users\nov03\Source\Repos\dwb1118\Fivos-AI-Chat-App\AiChatAppProject\GUI\FivosChatbotGUI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\nov03\Source\Repos\dwb1118\Fivos-AI-Chat-App\AiChatAppProject\GUI\FivosChatbotGUI\bin\Debug\Newtonsoft.Json.xml
+C:\Users\nov03\Source\Repos\dwb1118\Fivos-AI-Chat-App\AiChatAppProject\GUI\FivosChatbotGUI\obj\Debug\FivosChatbotGUI.csproj.AssemblyReference.cache
+C:\Users\nov03\Source\Repos\dwb1118\Fivos-AI-Chat-App\AiChatAppProject\GUI\FivosChatbotGUI\obj\Debug\FivosChatbotGUI.Properties.Resources.resources
+C:\Users\nov03\Source\Repos\dwb1118\Fivos-AI-Chat-App\AiChatAppProject\GUI\FivosChatbotGUI\obj\Debug\FivosChatbotGUI.csproj.GenerateResource.cache
+C:\Users\nov03\Source\Repos\dwb1118\Fivos-AI-Chat-App\AiChatAppProject\GUI\FivosChatbotGUI\obj\Debug\FivosChatbotGUI.csproj.CoreCompileInputs.cache
+C:\Users\nov03\Source\Repos\dwb1118\Fivos-AI-Chat-App\AiChatAppProject\GUI\FivosChatbotGUI\obj\Debug\FivosCha.D21A3D97.Up2Date
+C:\Users\nov03\Source\Repos\dwb1118\Fivos-AI-Chat-App\AiChatAppProject\GUI\FivosChatbotGUI\obj\Debug\FivosChatbotGUI.exe
+C:\Users\nov03\Source\Repos\dwb1118\Fivos-AI-Chat-App\AiChatAppProject\GUI\FivosChatbotGUI\obj\Debug\FivosChatbotGUI.pdb

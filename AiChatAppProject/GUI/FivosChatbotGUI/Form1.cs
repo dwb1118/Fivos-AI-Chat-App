@@ -17,10 +17,12 @@ namespace FivosChatbotGUI
 
         
         private static readonly HttpClient client = new HttpClient();
+ 
 
         public Form1()
         {
             InitializeComponent();
+            client.Timeout = TimeSpan.FromMinutes(30);
 
             // Forms properties
             this.Text = "AI Chat Query App";
@@ -72,17 +74,48 @@ namespace FivosChatbotGUI
                 // Displays user message
                 chatBox.AppendText("User: " + userMessage + "\n");
 
-                // Calls FastAPI
                 try
                 {
-                    // Send request to FastAPI
+                    // Step 1: Check connection before sending
+                    chatBox.AppendText("🔌 Checking connection to API...\n");
+
+                    try
+                    {
+                        var healthCheck = await client.GetAsync("http://127.0.0.1:8000/ping");
+                        if (healthCheck.IsSuccessStatusCode)
+                        {
+                            chatBox.AppendText("✅ Connection successful.\n");
+                        }
+                        else
+                        {
+                            chatBox.AppendText($"❌ Could not connect to FastAPI backend. Status: {healthCheck.StatusCode}\n");
+                            return;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        chatBox.AppendText($"❌ Could not connect to FastAPI backend. Error: {ex.Message}\n");
+                        return;
+                    }
+
+                    // Step 2: Let user know we’re waiting
+                    chatBox.AppendText("🤖 Sending request... waiting on qwen3:4b\n");
+
+                    // Step 3: Send the actual request
                     var payload = new { prompt = userMessage };
                     var json = JsonConvert.SerializeObject(payload);
                     var content = new StringContent(json, Encoding.UTF8, "application/json");
 
                     var response = await client.PostAsync("http://127.0.0.1:8000/ask", content);
-                    response.EnsureSuccessStatusCode();  // Throws if status code is not 2xx
 
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        chatBox.AppendText($"⚠️ Failed: {response.StatusCode}\n");
+                        return;
+                    }
+
+                    /*
+                    // Step 4: Parse AI response
                     string aiResponse = await response.Content.ReadAsStringAsync();
                     var parsed = JObject.Parse(aiResponse);
 
@@ -105,23 +138,41 @@ namespace FivosChatbotGUI
                                 chatBox.AppendText("   " + string.Join(" | ", rowValues) + "\n");
                             }
                         }
+                    }*/
+
+                    // Step 4: Parse AI response
+                    string aiResponse = await response.Content.ReadAsStringAsync();
+                    var parsed = JObject.Parse(aiResponse);
+
+                    if (parsed["error"] != null)
+                    {
+                        chatBox.AppendText("❌ System Error: " + parsed["error"].ToString() + "\n");
                     }
+                    else if (parsed["ai_response"] != null)
+                    {
+                        string aiText = parsed["ai_response"]?.ToString();
+                        chatBox.AppendText("🤖 AI Response: " + aiText + "\n");
+                    }
+                    else
+                    {
+                        chatBox.AppendText("⚠️ Unexpected response format.\n");
+                    }
+
+                }
+                catch (TaskCanceledException)
+                {
+                    chatBox.AppendText("⏳ Request timed out (waited too long for model response).\n");
                 }
                 catch (Exception ex)
                 {
-                    chatBox.AppendText($"System Error: {ex.Message}\n");
+                    chatBox.AppendText($"❌ System Error: {ex.Message}\n");
                 }
-
-                //chatBox.AppendText("System: " + aiResponse + "\n");
-
-                // Simulates AI Response (will replace with the actual AI call later)
-                //string aiResponse = "System: (Sample response for '" + userMessage + "')\n";
-                //chatBox.AppendText(aiResponse);
 
                 // Clears input
                 inputBox.Clear();
             }
         }
+
     }
 }
 
@@ -142,4 +193,3 @@ namespace FivosChatbotGUI
 // 5. It runs the SQL query on PostgreSQL and gets the results.
 // 6. The results are sent back to the FastAPI and then to the WinForms app and displayed in the chat box.
 // 
-
