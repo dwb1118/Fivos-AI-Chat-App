@@ -1,32 +1,132 @@
-# Fivos-AI-Chat-App
+# 🧠 Fivos AI Chat App
 
-GUI:<br>
-How to run this code:<br>
-1. Ensure you have .NET Framework installed (version 4.8 or compatible).<br>
-2. Create a new Windows Forms App project in Visual Studio.<br>
-3. Ensure you have the Newtonsoft.Json package installed via NuGet.<br>
-4. Tools > NuGet Package Manager > Manage NuGet Packages for solution > Install-Package Newtonsoft.Json<br>
-5. Replace the auto-generated code in Form1.cs with the code above.<br>
-6. Build and run the project.<br>
-<br>
+An AI-powered SQL assistant that translates natural language questions into SQL queries using **LangChain**, **Ollama**, and **TinyLlama** — featuring a **C# WinForms GUI** frontend and a **FastAPI** backend.
 
-How it works:<br>
-1. The application creates a basic GUI with a chat display, an input box, and a send button.<br>
-2. When the user types a message and clicks "Send", the message is displayed in the chat box.<br>
-3. WinForms sends the request to the FastAPI/ask endpoint.<br>
-4. The FastAPI sends the request to the Ollama (AI model) and gets a SQL query as a response.<br>
-5. It runs the SQL query on PostgreSQL and gets the results.<br>
-6. The results are sent back to the FastAPI and then to the WinForms app and displayed in the chat box.<br>
-<br>
+---
 
-FastAPI:<br>
-1. How to run the app:<br>
-2. Ensure you have FastAPI, Uvicorn and Pydantic installed:<br>
-3. In the console: python -m pip install fastapi pydantic requests<br>
-4. In the console: python -m pip install "uvicorn[standard]"<br>
-5. In the console: python -m pip install fastapi uvicorn requests <br>
-6. Ensure you have SQLite database named "ChatAppDB.db" in the same directory.<br>
-7. Ensure you have Ollama running locally with the TinyLlama model:<br>
-8. In the console: ollama serve<br>
-9. To run the app, use the command: uvicorn FastAPIapp:app --reload<br>
-9. After running this, FastAPI will be available at http://127.0.0.1:8000   <br>
+## ⚙️ Project Structure
+```
+Fivos-AI-Chat-App/
+│
+├── FastAPI/                     # Python backend
+│   ├── FastAPIapp.py
+│   ├── venv/                    # Virtual environment (auto-used by script)
+│   └── requirements.txt
+│
+├── GUI/                         # WinForms frontend
+│   └── FivosChatbotGUI/
+│       └── bin/Debug/FivosChatbotGUI.exe
+│
+├── SQLiteDB/
+│   └── thrombosis_prediction/thrombosis_prediction.sqlite
+│
+└── Launch_FivosAI.bat           # One-click launcher for teammates
+```
+
+---
+
+## 🚀 One-Click Launch (Recommended)
+
+### Step 1️⃣ — Install Ollama and Model
+1. [Download Ollama](https://ollama.ai/download) and install it.  
+2. (Only once) Open a terminal and pull the model:
+   ```bash
+   ollama pull tinyllama
+   ```
+
+---
+
+### Step 2️⃣ — Launch the Entire App
+Just double-click:  
+👉 **`Launch_FivosAI.bat`**
+
+This will automatically:
+- Start **Ollama** (if it isn’t already running)
+- Pull the **TinyLlama** model (if not present)
+- Run the **FastAPI backend**
+- Launch the **C# GUI**
+
+✅ **Everything runs automatically** — no path edits, no manual activation, no separate terminals needed.  
+The script detects its own folder and runs all components relative to it.
+
+---
+
+## 💻 Developer Setup (Manual Run)
+
+If you prefer to run components manually or modify code:
+
+### Backend (FastAPI)
+```bash
+cd FastAPI
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+uvicorn FastAPIapp:app --reload
+```
+
+FastAPI will start at  
+👉 **http://127.0.0.1:8000**
+
+---
+
+### Frontend (GUI)
+1. Open `GUI/FivosChatbotGUI/FivosChatbotGUI.sln` in Visual Studio.  
+2. Ensure **.NET Framework 4.8** is installed.  
+3. Add **Newtonsoft.Json** from NuGet if not already installed.  
+4. Build and run the solution, or launch directly via:
+   ```
+   GUI/FivosChatbotGUI/bin/Debug/FivosChatbotGUI.exe
+   ```
+
+---
+
+## 🧩 How It Works
+
+1. The **user** types a natural language question in the GUI.  
+2. The **GUI** sends it to the **FastAPI** backend.  
+3. The backend uses **TinyLlama** (via Ollama) to translate the request into SQL.  
+4. The query runs on the **SQLite** database.  
+5. The backend sends the SQL and summarized results back to the GUI.
+
+---
+
+## 🧪 Example Interaction
+
+**User:**  
+> Show all patients from Patient table
+
+**Generated SQL:**  
+```sql
+SELECT * FROM Patient;
+```
+
+**Summary:**  
+> Here are all the patients from the patient table.
+
+---
+
+## ⚠️ Troubleshooting
+
+| Issue | Fix |
+|-------|-----|
+| `❌ Could not connect to FastAPI backend` | Make sure `Launch_FivosAI.bat` ran successfully. |
+| `Ollama request timed out` | Reopen Ollama (`ollama serve`) or restart your PC. |
+| GUI doesn’t open | Check that .NET Framework 4.8 is installed. |
+| Database not found | Ensure the `SQLiteDB` folder is in the same directory as the `.bat` file. |
+
+---
+
+## 🧰 Tech Stack
+
+- **Backend:** Python, FastAPI, LangChain, TinyLlama, Ollama  
+- **Frontend:** C# (.NET WinForms), Newtonsoft.Json  
+- **Database:** SQLite  
+- **Automation:** Windows Batch Script (`Launch_FivosAI.bat`)
+
+---
+
+### 🧩 Tip for Teammates
+If you clone the repo anywhere on your desktop, you can just:
+> 🖱️ Double-click `Launch_FivosAI.bat` and everything will start.
+
+No configuration needed.
