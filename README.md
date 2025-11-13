@@ -27,12 +27,8 @@ Fivos-AI-Chat-App/
 
 ## 🚀 One-Click Launch (Recommended)
 
-### Step 1️⃣ — Install Ollama and Model
+### Step 1️⃣ — Install Ollama
 1. [Download Ollama](https://ollama.ai/download) and install it.  
-2. (Only once) Open a terminal and pull the model:
-   ```bash
-   ollama pull tinyllama
-   ```
 
 ---
 
