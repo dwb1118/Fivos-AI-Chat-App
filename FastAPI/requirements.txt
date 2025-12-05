@@ -1,0 +1,32 @@
+# FastAPI web framework
+fastapi==0.115.0
+
+# Uvicorn ASGI server with standard extras (watchgod, httptools, websockets)
+uvicorn[standard]==0.30.1
+
+# LangChain core and community packages
+langchain==0.2.16
+langchain-community==0.2.5
+langchain-ollama==0.1.5
+
+# Requests for HTTP calls to Ollama server
+requests==2.32.3
+
+# Pydantic for request validation
+pydantic==2.9.2
+
+# SQLite database driver (built-in, included in Python, no need to install)
+# Included here for clarity
+sqlite3
+
+# Logging (built-in in Python)
+# Included here for clarity
+logging
+
+# Regex (built-in)
+# Included here for clarity
+re
+
+# JSON handling (built-in)
+# Included here for clarity
+json
